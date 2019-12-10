@@ -1,4 +1,4 @@
 ﻿{
  		
-		"connectionString": "mongodb://heroku_8wvnv8sz:lj7c093dgjsum1df267i14q58b@ds349628.mlab.com:49628/heroku_8wvnv8sz"
+		"connectionString": "mongodb://mongdbusr:Ld4MDB4D12_19@3.18.223.74:27017/liquidity_test"
 }

@@ -12,8 +12,7 @@ router.delete('/:id', _delete);
 module.exports = router;
 
 function register(req, res, next) {
-	console.log("function came inside"+req.body);
-    userService.create(req.body)
+	   userService.create(req.body)
         .then(() => res.json({"message": "User saved Successfully!"}))
         .catch(
 		

@@ -23,7 +23,6 @@ async function getById(id) {
 }       
 
 async function create(userParam) {
-    console.log("Service function for create"+userParam.Email);
     // validate
    // if (await User.findOne({ Email: userParam.Email })) {
      //   throw 'Email "' + userParam.Email + '" is already taken';
@@ -36,12 +35,9 @@ async function create(userParam) {
         obj.message = "PhoneNumber length should be 10 digit and Integer";
         throw obj;
     }
-console.log("Phonenumber validation crossed");
     const user = new User(userParam);
-console.log("created user");
     // save user
     await user.save();
-	console.log("after save");
 }
 
 async function update(id, userParam) {
