@@ -4,6 +4,10 @@
   "description": "NodeJS + MongoDB API for CRUD",
   "main": "server.js",
   "license": "",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
   "scripts": {
     "start": "node ./server.js",
     "start-dev": "nodemon ./server.js"

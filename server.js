@@ -9,6 +9,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get('/',(req,res)=>
+{
+    res.send("Welcome to Liquidity Test Task");
+}
+);
+
 // api routes
 app.use('/users', require('./users/users.controller'));
 
