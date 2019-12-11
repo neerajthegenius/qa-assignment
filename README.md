@@ -1,5 +1,5 @@
 # QA technical assignmnet
-## Guide
+## [Guide](https://docs.google.com/document/d/1UyczFhqcojvypNZg5q22_yixKODBczrtShB2hlxuqp4)
 
 Steps :
 1. Create a new repository in your github account
