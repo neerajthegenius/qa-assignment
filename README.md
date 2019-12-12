@@ -1,52 +1,52 @@
 # QA technical assignmnet
-## [Guide](https://docs.google.com/document/d/1UyczFhqcojvypNZg5q22_yixKODBczrtShB2hlxuqp4)
+## [Guide](https://docs.google.com/document/d/1KppmHlCzpPFqxBvr4bvFL6nTdpzUxKJBM1c1VsallF0)
 
-Steps :
-1. Create a new repository in your github account
-2. Fork this repo.
-3. Make Test automation script
-4. Rest API methods are given in this page 
-5. Make sure you implemented CI Pipeline structure
-6. Push changes to your repository 
-7. Share the code repository us for review.
+About this task:
+The test task involves managing the user CRUD operation.
+The codebase has been added to the Github repository. Quality Engineer candidates are to use this code and create the test automation scripts.
 
-## Notes
+Inputs
 
--The function of the repository is user management of crud operation
+-Rest API reference 
+-QA Engineer can access the code from this URL  https://github.com/liquidity-digital-inc/UserManagement.git . Create a new repository in your account and import this repository.
+-QA Engineer can test the live application here:  https://peaceful-wildwood-93487.herokuapp.com/
 
--The purpose of the repository is Quality Engineers use this codebase and make to Test automation scripts and CI pipeline.
 
--This application deployed at heroku and url is https://peaceful-wildwood-93487.herokuapp.com
+Test case 
 
--This applicated code updated at Github and URL is https://github.com/liquidity-digital-inc/UserManagement
+ 	Create-Create a new user and save.
+		-If email is already in table then give a valid error message
+		-Phone number should be in numeric and restricted to  10 digits.
+		-If user is added in database then display valid message to user
+	
+	Read-Read  user list from the table in ascending order by name
 
--This application database connection string : "mongodb://mongdbusr:Ld4MDB4D12_19@3.18.223.74:27017/liquidity_test"
+	Update-User can update details based on email id
 
--REST API
+	Delete-User can delete the user record  based on email id
 
--Create a user
+Rest API
+
+1.Create a user
 
 URL:https://peaceful-wildwood-93487.herokuapp.com/users/register
 Http Method:Post
 Body
-
 	{
-	  "Name": "Manikandan",
- 
-   	"Email": "manikandan@gmail.com",
+	"Name": "Manikandan",
+ 	"Email": "manikandan@gmail.com",
+	"Department": "IT", 
+	"PhoneNumber": "7890034678"
+	}
 
-    "Department": "IT",
-    
-		"PhoneNumber": "7890034678"
-	
-  }
 
--Read user list:
+2.Read user list:
 
 URL:https://peaceful-wildwood-93487.herokuapp.com/users
 Method: Get
 
--Update User list
+
+3.Update User list
 
 https://peaceful-wildwood-93487.herokuapp.com/users/manikandan@gmail.com
 		
@@ -54,19 +54,85 @@ Http Method:PUT
 Body
 
 	{
-	    "Name": "Manikandan",
- 
-   		"Email": "manikandan@gmail.com",
-
-    	"Department": "Accounts",
-    
-		  "PhoneNumber": "7890034678"
+	"Name": "Manikandan",
+ 	"Email": "manikandan@gmail.com",
+ 	"Department": "IT",
+    	"PhoneNumber": "7890034678"
 	
 }
 
--Delete User list
+4.Delete User list
+
+https://peaceful-wildwood-93487.herokuapp.com/users/manikandan@gmail.com
+Http Method:DELETE
+
+
+Output
+
+We expect the following outputs from our QA engineer.
+Test Automation script should be added in the codebase
+Test script should be added in CI(Continuous Integration) Pipeline (use any CI tool/service of your choice)
+Compile
+Validate
+Unit Testing
+Push the Test script code to your own repository
+Share the code repository URL for review.
+ 
+Rest API
+
+1.Create a user
+
+URL:https://peaceful-wildwood-93487.herokuapp.com/users/register
+Http Method:Post
+Body
+	{
+	"Name": "Manikandan",
+ 	"Email": "manikandan@gmail.com",
+	"Department": "IT", 
+	"PhoneNumber": "7890034678"
+	}
+
+
+2.Read user list:
+
+URL:https://peaceful-wildwood-93487.herokuapp.com/users
+Method: Get
+
+
+3.Update User list
 
 https://peaceful-wildwood-93487.herokuapp.com/users/manikandan@gmail.com
 		
+Http Method:PUT
+Body
+
+	{
+	"Name": "Manikandan",
+ 	"Email": "manikandan@gmail.com",
+ 	"Department": "IT",
+    	"PhoneNumber": "7890034678"
+	
+}
+
+4.Delete User list
+
+https://peaceful-wildwood-93487.herokuapp.com/users/manikandan@gmail.com
 Http Method:DELETE
+
+
+Output
+We expect the following outputs from our QA engineer.
+Test Automation script should be added in the codebase
+Test script should be added in CI(Continuous Integration) Pipeline (use any CI tool/service of your choice)
+Compile
+Validate
+Unit Testing
+Push the Test script code to your own repository
+Share the code repository URL for review.
+ 
+Recommendations
+Quality Engineer can use any of the  following frameworks and implement it in any one of the following automation tools.
+Framework -Mocha/Chai,Jasmine,jsUnit 
+Tools: Selenium,Jenkins,circleCI,Gitlab,heroku
+
 
