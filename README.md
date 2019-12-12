@@ -11,7 +11,6 @@ Inputs
 -QA Engineer can access the code from this URL  https://github.com/liquidity-digital-inc/UserManagement.git . Create a new repository in your account and import this repository.
 -QA Engineer can test the live application here:  https://peaceful-wildwood-93487.herokuapp.com/
 
-
 Test case 
 
  	Create-Create a new user and save.
@@ -78,61 +77,6 @@ Unit Testing
 Push the Test script code to your own repository
 Share the code repository URL for review.
  
-Rest API
 
-1.Create a user
-
-URL:https://peaceful-wildwood-93487.herokuapp.com/users/register
-Http Method:Post
-Body
-	{
-	"Name": "Manikandan",
- 	"Email": "manikandan@gmail.com",
-	"Department": "IT", 
-	"PhoneNumber": "7890034678"
-	}
-
-
-2.Read user list:
-
-URL:https://peaceful-wildwood-93487.herokuapp.com/users
-Method: Get
-
-
-3.Update User list
-
-https://peaceful-wildwood-93487.herokuapp.com/users/manikandan@gmail.com
-		
-Http Method:PUT
-Body
-
-	{
-	"Name": "Manikandan",
- 	"Email": "manikandan@gmail.com",
- 	"Department": "IT",
-    	"PhoneNumber": "7890034678"
-	
-}
-
-4.Delete User list
-
-https://peaceful-wildwood-93487.herokuapp.com/users/manikandan@gmail.com
-Http Method:DELETE
-
-
-Output
-We expect the following outputs from our QA engineer.
-Test Automation script should be added in the codebase
-Test script should be added in CI(Continuous Integration) Pipeline (use any CI tool/service of your choice)
-Compile
-Validate
-Unit Testing
-Push the Test script code to your own repository
-Share the code repository URL for review.
- 
-Recommendations
-Quality Engineer can use any of the  following frameworks and implement it in any one of the following automation tools.
-Framework -Mocha/Chai,Jasmine,jsUnit 
-Tools: Selenium,Jenkins,circleCI,Gitlab,heroku
 
 
