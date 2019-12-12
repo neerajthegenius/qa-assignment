@@ -1,17 +1,16 @@
 # QA technical assignmnet
 ## [Guide](https://docs.google.com/document/d/1KppmHlCzpPFqxBvr4bvFL6nTdpzUxKJBM1c1VsallF0)
 
-About this task:
+## About this task:
 The test task involves managing the user CRUD operation.
 The codebase has been added to the Github repository. Quality Engineer candidates are to use this code and create the test automation scripts.
 
-Inputs
+## Inputs
+- Rest API reference 
+- QA Engineer can access the code from this URL  https://github.com/liquidity-digital-inc/UserManagement.git . Create a new repository in your account and import this repository.
+- QA Engineer can test the live application here:  https://peaceful-wildwood-93487.herokuapp.com/
 
--Rest API reference 
--QA Engineer can access the code from this URL  https://github.com/liquidity-digital-inc/UserManagement.git . Create a new repository in your account and import this repository.
--QA Engineer can test the live application here:  https://peaceful-wildwood-93487.herokuapp.com/
-
-Test case 
+## Test case 
 
  	Create-Create a new user and save.
 		-If email is already in table then give a valid error message
@@ -24,8 +23,7 @@ Test case
 
 	Delete-User can delete the user record  based on email id
 
-Rest API
-
+## Rest API
 1.Create a user
 
 URL:https://peaceful-wildwood-93487.herokuapp.com/users/register
@@ -66,7 +64,7 @@ https://peaceful-wildwood-93487.herokuapp.com/users/manikandan@gmail.com
 Http Method:DELETE
 
 
-Output
+## Output
 
 We expect the following outputs from our QA engineer.
 Test Automation script should be added in the codebase
