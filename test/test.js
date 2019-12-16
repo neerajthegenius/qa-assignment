@@ -1,4 +1,4 @@
-//const should = require("should");
+//Require dev dependencies
 const request = require("request");
 const expect = require("chai").expect;
 const baseUrl = "https://peaceful-wildwood-93487.herokuapp.com";
@@ -8,6 +8,7 @@ chai.use(require('chai-like'));
 chai.use(require('chai-things'));
 const should = chai.should();
 
+//Test for GET method
 
 describe('/GET User', function() {
     it('User should get all the customer information', function(done) {
@@ -28,6 +29,8 @@ describe('/GET User', function() {
             });
     });
 
+//Test for GET/id method
+
     it('User should not display any customer information with invalid id', function(done) {
         request.get({ url: baseUrl + '/users/Demo@223abc.com' },
             function(error, response,body) {
@@ -36,6 +39,8 @@ describe('/GET User', function() {
                 done();
             });
     });
+
+//Test for GET/id method
 
     it('User should display customer information with valid id', function(done) {
         request.get({ url: baseUrl + '/users/Demo@abc.com' },
@@ -56,6 +61,7 @@ describe('/GET User', function() {
 });
 
 
+//Test for POST method
 
 describe('/POST User', function() {
         it('User should post the user information',function(done)  {
@@ -69,6 +75,8 @@ describe('/POST User', function() {
          function(error, response,body)  {
            expect(body).to.contain.property('message').and.have.string('User saved Successfully!');
     
+        //Verify the new data is created or not using GET/id method
+
          request.get({ url: baseUrl + '/users/'+user.Email },
             function(error, response,body) {
                     const bodyObj = JSON.parse(body);
@@ -131,7 +139,7 @@ describe('/POST User', function() {
 });
 
 
-
+//Test for PUT method
 describe('/Put user', () => {
     it('User should able to update the customer information',function(done)  {
         const user = {
@@ -144,6 +152,9 @@ describe('/Put user', () => {
          function(error, response,body)  {
             expect(response.statusCode).to.equal(200);
             expect(body).to.contain.property('message').and.have.string('User saved Successfully!');
+
+            //Verify the updated customer information using GET/id method
+
             request.get({ url: baseUrl + '/users/'+user.Email },
             function(error, response,body) {
                     const bodyObj = JSON.parse(body);
@@ -186,12 +197,16 @@ describe('/Put user', () => {
     });
 });
 
+//Test for Delete method
+
 describe('/Delete user', () => {
     it('User should able to delete the customer information',function(done)  {
          request.delete({ url: baseUrl + '/users/Demo@12314567.com'},
          function(error, response,body)  {
             expect(response.statusCode).to.equal(200);
-            //expect(response.body).to.contain.property('message').and.have.string('User Deleted Successfully!');
+
+            //Verify the user is deleted or not using GET/id method
+
             request.get({ url: baseUrl + '/users/Demo@12314567.com' },
             function(error, response,body) {
                     expect(response.body).to.deep.equal('[]');
