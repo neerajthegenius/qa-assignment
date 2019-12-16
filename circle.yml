@@ -30,7 +30,3 @@ jobs:
           name: Run API Tests
           command: 'npm test'
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
