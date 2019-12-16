@@ -12,11 +12,25 @@ jobs:
             node --version
             npm --version
       - checkout
+      
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install Mocha
-          command: 'sudo npm i -g mocha'
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+          
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+          
+      - run: npm install
+      
       - run:
           name: Run API Tests
           command: 'npm test'
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
